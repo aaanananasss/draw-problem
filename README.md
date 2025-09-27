@@ -102,4 +102,5 @@ In short:
 So far, it only works with the 0-90 degree branch. I also tweaked a few things, and it seems to be working almost perfectly for 91-180: y0 is definitely correct, but something else needs to be subtracted from x0...
 
 [![example][1]][1]
+
 [1]: https://i.sstatic.net/LhEviYod.webp
