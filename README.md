@@ -107,10 +107,11 @@ So far, it only works with the 0-90 degree branch. I also tweaked a few things, 
 
 
 
-What I needed:
+What I needed (sample image):
 
 ![needed](/exm/needed.png)
 
 
 Now (problem):
+
 ![now](/exm/now.png)
