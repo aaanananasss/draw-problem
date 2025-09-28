@@ -6,13 +6,12 @@ rotate = 120
 font = ImageFont.load_default(12)
 SS = 4
 
-temp_img: Image.Image = Image.new("RGBA", (max(1, int(0 * SS)), max(1, int(0 * SS))),(0, 0, 0, 0))
-temp_draw: ImageDraw.ImageDraw = ImageDraw.Draw(temp_img)
+temp_draw = ImageDraw.Draw(Image.new("RGBA", (max(1, int(0 * SS)), max(1, int(0 * SS))),(0, 0, 0, 0)))
 
 bbox = temp_draw.textbbox((0, 0), txt, font)
-text_w, text_h = bbox[2] - bbox[0], bbox[3] - bbox[1]
+txt_w, txt_h = bbox[2] - bbox[0], bbox[3] - bbox[1]
 
-temp_img = Image.new("RGBA", (max(1, int(text_w * SS)), max(1, int(text_h * SS))), (0, 0, 0, 0))
+temp_img = Image.new("RGBA", (max(1, int(txt_w * SS)), max(1, int(txt_h * SS))), (0, 0, 0, 0))
 temp_draw = ImageDraw.Draw(temp_img)
 
 temp_draw.text((0, 0), txt, (0, 0, 0), font)
@@ -21,9 +20,7 @@ if 0 <= rotate <= 360:
     temp_img = temp_img.rotate(-rotate, expand=True, resample=Image.BICUBIC)
     b = temp_img.getbbox()
     w, h = temp_img.size
-    print(w, h, b)
 
-    #NEED FIX
     if 0 <= rotate <= 90:
         x0 = -b[0]
         y0 = -b[1]
